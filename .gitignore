@@ -203,6 +203,22 @@ cython_debug/
 # Temporary file for partial code execution
 tempCodeRunnerFile.py
 
+# EnergyOps source and generated local state
+data/raw/*
+!data/raw/.gitkeep
+data/export/*
+!data/export/.gitkeep
+*.db
+*.sqlite
+*.sqlite3
+*.tmp
+*.temp
+*.swp
+*~
+docker-data/
+docker-volumes/
+volumes/
+
 # Ruff stuff:
 .ruff_cache/
 
