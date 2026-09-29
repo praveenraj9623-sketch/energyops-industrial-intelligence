@@ -18,5 +18,49 @@ services:
       retries: 20
       start_period: 10s
 
+  superset-metadata:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: superset
+      POSTGRES_USER: superset_meta
+      POSTGRES_PASSWORD: ${SUPERSET_METADATA_PASSWORD:?Set SUPERSET_METADATA_PASSWORD}
+    volumes:
+      - energyops_superset_metadata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U superset_meta -d superset"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  superset:
+    image: apache/superset:3.0.0
+    restart: unless-stopped
+    depends_on:
+      energyops-db:
+        condition: service_healthy
+      superset-metadata:
+        condition: service_healthy
+    environment:
+      SUPERSET_SECRET_KEY: ${SUPERSET_SECRET_KEY:?Set SUPERSET_SECRET_KEY}
+      SUPERSET_METADATA_PASSWORD: ${SUPERSET_METADATA_PASSWORD:?Set SUPERSET_METADATA_PASSWORD}
+      SUPERSET_CONFIG_PATH: /app/pythonpath/superset_config.py
+      SUPERSET_ADMIN_USERNAME: ${SUPERSET_ADMIN_USERNAME:?Set SUPERSET_ADMIN_USERNAME}
+      SUPERSET_ADMIN_PASSWORD: ${SUPERSET_ADMIN_PASSWORD:?Set SUPERSET_ADMIN_PASSWORD}
+      SUPERSET_ADMIN_EMAIL: ${SUPERSET_ADMIN_EMAIL:?Set SUPERSET_ADMIN_EMAIL}
+    ports:
+      - "127.0.0.1:${SUPERSET_PORT:-8090}:8088"
+    volumes:
+      - ./superset/superset_config.py:/app/pythonpath/superset_config.py:ro
+      - energyops_superset_home:/app/superset_home
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://127.0.0.1:8088/health >/dev/null"]
+      interval: 15s
+      timeout: 5s
+      retries: 20
+      start_period: 60s
+
 volumes:
   energyops_pgdata:
+  energyops_superset_metadata:
+  energyops_superset_home:

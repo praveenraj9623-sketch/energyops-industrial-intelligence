@@ -1,0 +1,186 @@
+{
+  "generated_at_utc": "2026-09-29T14:56:46.133363+00:00",
+  "database_version": "16.15 (Debian 16.15-1.pgdg13+2)",
+  "csv_sha256": "9b1cee6f9cb9cd9df2b95814ca90a9a2ff15b7f5f1fba0fae3c643e82072eacc",
+  "source_observations": 35040,
+  "source_distinct_timestamps": 35040,
+  "source_totals": {
+    "usage_kwh": "959636.71",
+    "lagging_reactive_power_kvarh": "456759.84",
+    "leading_reactive_power_kvarh": "135638.04"
+  },
+  "model_row_counts": {
+    "energy_hourly": 8760,
+    "energy_daily": 365,
+    "energy_hourly_by_load_type": 10673,
+    "energy_daily_by_load_type": 971,
+    "energy_hour_of_day_profile": 48,
+    "energy_load_type_summary": 3
+  },
+  "model_totals": {
+    "energy_hourly": {
+      "intervals": 35040,
+      "usage_kwh": "959636.71",
+      "lagging_reactive_power_kvarh": "456759.84",
+      "leading_reactive_power_kvarh": "135638.04"
+    },
+    "energy_daily": {
+      "intervals": 35040,
+      "usage_kwh": "959636.71",
+      "lagging_reactive_power_kvarh": "456759.84",
+      "leading_reactive_power_kvarh": "135638.04"
+    },
+    "energy_hourly_by_load_type": {
+      "intervals": 35040,
+      "usage_kwh": "959636.71",
+      "lagging_reactive_power_kvarh": "456759.84",
+      "leading_reactive_power_kvarh": "135638.04"
+    },
+    "energy_daily_by_load_type": {
+      "intervals": 35040,
+      "usage_kwh": "959636.71",
+      "lagging_reactive_power_kvarh": "456759.84",
+      "leading_reactive_power_kvarh": "135638.04"
+    }
+  },
+  "periods": {
+    "first_hour": "2018-01-01T00:00:00",
+    "last_hour": "2018-12-31T23:00:00",
+    "first_date": "2018-01-01",
+    "last_date": "2018-12-31",
+    "expected_hours_in_coverage": 8760,
+    "missing_hours": 0,
+    "expected_days_in_coverage": 365,
+    "missing_days": 0,
+    "partial_hours": 0,
+    "partial_days": 0
+  },
+  "selected_daily_source_sums_kwh": {
+    "2018-01-01": "351.86",
+    "2018-12-31": "339.08",
+    "2018-07-01": "287.83"
+  },
+  "selected_daily_database_sums_kwh": {
+    "2018-01-01": "351.86",
+    "2018-12-31": "339.08",
+    "2018-07-01": "287.83"
+  },
+  "selected_mixed_load_hours": [
+    {
+      "hour_start_local": "2018-01-02T09:00:00",
+      "intervals_by_load_type": {
+        "Light_Load": 1,
+        "Medium_Load": 3
+      },
+      "source_usage_kwh": "212.43"
+    },
+    {
+      "hour_start_local": "2018-01-02T10:00:00",
+      "intervals_by_load_type": {
+        "Medium_Load": 1,
+        "Maximum_Load": 3
+      },
+      "source_usage_kwh": "241.02"
+    },
+    {
+      "hour_start_local": "2018-01-02T12:00:00",
+      "intervals_by_load_type": {
+        "Maximum_Load": 1,
+        "Medium_Load": 3
+      },
+      "source_usage_kwh": "159.22"
+    }
+  ],
+  "load_type_counts": {
+    "Light_Load": 18072,
+    "Medium_Load": 9696,
+    "Maximum_Load": 7272
+  },
+  "source_week_status_counts": {
+    "Weekday": 25056,
+    "Weekend": 9984
+  },
+  "database_week_status_counts": {
+    "Weekday": 25056,
+    "Weekend": 9984
+  },
+  "reapply_snapshots_equal": true,
+  "raw_rows_after_reapply": 35040,
+  "ingestion_runs_after_reapply": 4,
+  "decimal_tolerance": "0.000001",
+  "explain_analyze": {
+    "hourly_date_range": {
+      "execution_ms": 4.574,
+      "planning_ms": 0.126,
+      "nodes": [
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null
+        },
+        {
+          "node_type": "Sort",
+          "relation": null,
+          "index": null
+        },
+        {
+          "node_type": "Seq Scan",
+          "relation": "steel_energy_readings",
+          "index": null
+        }
+      ],
+      "shared_hit_blocks": 1070
+    },
+    "daily_date_range": {
+      "execution_ms": 4.39,
+      "planning_ms": 0.112,
+      "nodes": [
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null
+        },
+        {
+          "node_type": "Sort",
+          "relation": null,
+          "index": null
+        },
+        {
+          "node_type": "Seq Scan",
+          "relation": "steel_energy_readings",
+          "index": null
+        }
+      ],
+      "shared_hit_blocks": 1070
+    },
+    "daily_load_type": {
+      "execution_ms": 2.407,
+      "planning_ms": 0.099,
+      "nodes": [
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null
+        },
+        {
+          "node_type": "Sort",
+          "relation": null,
+          "index": null
+        },
+        {
+          "node_type": "Bitmap Heap Scan",
+          "relation": "steel_energy_readings",
+          "index": null
+        },
+        {
+          "node_type": "Bitmap Index Scan",
+          "relation": null,
+          "index": "readings_load_type_idx"
+        }
+      ],
+      "shared_hit_blocks": 875
+    }
+  },
+  "reconciliation_status": "passed",
+  "problems": []
+}

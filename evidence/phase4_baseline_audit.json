@@ -1,0 +1,510 @@
+{
+  "generated_at_utc": "2026-09-29T14:56:48.574600+00:00",
+  "database_version": "16.15 (Debian 16.15-1.pgdg13+2)",
+  "csv_sha256": "9b1cee6f9cb9cd9df2b95814ca90a9a2ff15b7f5f1fba0fae3c643e82072eacc",
+  "method_version": "trailing_28d_load_hour_weekstatus_median_v1",
+  "trailing_window_days": 28,
+  "minimum_comparable_samples_per_component": 12,
+  "observed_hours": 8760,
+  "source_readings": 35040,
+  "eligible_hours": 7762,
+  "excluded_hours": 998,
+  "exclusive_exclusion_reason_counts": {
+    "insufficient_baseline_support": 998
+  },
+  "status_rows": [
+    {
+      "status": "eligible",
+      "eligible": true,
+      "hour_count": 7762,
+      "percentage_of_observed_hours": "88.6073059360730594"
+    },
+    {
+      "status": "insufficient_baseline_support",
+      "eligible": false,
+      "hour_count": 998,
+      "percentage_of_observed_hours": "11.3926940639269406"
+    }
+  ],
+  "sampled_hours": [
+    {
+      "hour_start_local": "2018-01-01T00:00:00",
+      "eligible": false,
+      "exclusion_reason": "insufficient_baseline_support",
+      "current_observation_count": 4,
+      "historical_window_start_local": "2017-12-04T00:00:00",
+      "historical_window_end_exclusive_local": "2018-01-01T00:00:00",
+      "expected_usage_kwh": null,
+      "components": {
+        "Light_Load": {
+          "current_interval_count": 4,
+          "historical_sample_count": 0,
+          "historical_first_timestamp_local": null,
+          "historical_last_timestamp_local": null,
+          "median_15min_usage_kwh": null,
+          "p10_15min_usage_kwh": null,
+          "p90_15min_usage_kwh": null,
+          "supported": false,
+          "every_historical_timestamp_before_hour": true,
+          "every_historical_timestamp_in_window": true
+        }
+      },
+      "database_comparison_passed": true
+    },
+    {
+      "hour_start_local": "2018-01-03T12:00:00",
+      "eligible": false,
+      "exclusion_reason": "insufficient_baseline_support",
+      "current_observation_count": 4,
+      "historical_window_start_local": "2017-12-06T12:00:00",
+      "historical_window_end_exclusive_local": "2018-01-03T12:00:00",
+      "expected_usage_kwh": null,
+      "components": {
+        "Maximum_Load": {
+          "current_interval_count": 1,
+          "historical_sample_count": 1,
+          "historical_first_timestamp_local": "2018-01-02T12:00:00",
+          "historical_last_timestamp_local": "2018-01-02T12:00:00",
+          "median_15min_usage_kwh": "123.3",
+          "p10_15min_usage_kwh": "123.3",
+          "p90_15min_usage_kwh": "123.3",
+          "supported": false,
+          "every_historical_timestamp_before_hour": true,
+          "every_historical_timestamp_in_window": true
+        },
+        "Medium_Load": {
+          "current_interval_count": 3,
+          "historical_sample_count": 3,
+          "historical_first_timestamp_local": "2018-01-02T12:15:00",
+          "historical_last_timestamp_local": "2018-01-02T12:45:00",
+          "median_15min_usage_kwh": "8.46",
+          "p10_15min_usage_kwh": "8.24",
+          "p90_15min_usage_kwh": "19.22",
+          "supported": false,
+          "every_historical_timestamp_before_hour": true,
+          "every_historical_timestamp_in_window": true
+        }
+      },
+      "database_comparison_passed": true
+    },
+    {
+      "hour_start_local": "2018-03-15T10:00:00",
+      "eligible": true,
+      "exclusion_reason": null,
+      "current_observation_count": 4,
+      "historical_window_start_local": "2018-02-15T10:00:00",
+      "historical_window_end_exclusive_local": "2018-03-15T10:00:00",
+      "expected_usage_kwh": "294.22",
+      "components": {
+        "Maximum_Load": {
+          "current_interval_count": 3,
+          "historical_sample_count": 54,
+          "historical_first_timestamp_local": "2018-02-19T10:15:00",
+          "historical_last_timestamp_local": "2018-03-14T10:45:00",
+          "median_15min_usage_kwh": "75.31",
+          "p10_15min_usage_kwh": "56.09",
+          "p90_15min_usage_kwh": "116.53",
+          "supported": true,
+          "every_historical_timestamp_before_hour": true,
+          "every_historical_timestamp_in_window": true
+        },
+        "Medium_Load": {
+          "current_interval_count": 1,
+          "historical_sample_count": 18,
+          "historical_first_timestamp_local": "2018-02-19T10:00:00",
+          "historical_last_timestamp_local": "2018-03-14T10:00:00",
+          "median_15min_usage_kwh": "68.29",
+          "p10_15min_usage_kwh": "50.29",
+          "p90_15min_usage_kwh": "104.36",
+          "supported": true,
+          "every_historical_timestamp_before_hour": true,
+          "every_historical_timestamp_in_window": true
+        }
+      },
+      "database_comparison_passed": true
+    },
+    {
+      "hour_start_local": "2018-03-17T10:00:00",
+      "eligible": false,
+      "exclusion_reason": "insufficient_baseline_support",
+      "current_observation_count": 4,
+      "historical_window_start_local": "2018-02-17T10:00:00",
+      "historical_window_end_exclusive_local": "2018-03-17T10:00:00",
+      "expected_usage_kwh": null,
+      "components": {
+        "Maximum_Load": {
+          "current_interval_count": 3,
+          "historical_sample_count": 12,
+          "historical_first_timestamp_local": "2018-02-24T10:15:00",
+          "historical_last_timestamp_local": "2018-03-11T10:45:00",
+          "median_15min_usage_kwh": "33.05",
+          "p10_15min_usage_kwh": "9.83",
+          "p90_15min_usage_kwh": "76.21",
+          "supported": true,
+          "every_historical_timestamp_before_hour": true,
+          "every_historical_timestamp_in_window": true
+        },
+        "Medium_Load": {
+          "current_interval_count": 1,
+          "historical_sample_count": 4,
+          "historical_first_timestamp_local": "2018-02-24T10:00:00",
+          "historical_last_timestamp_local": "2018-03-11T10:00:00",
+          "median_15min_usage_kwh": "32",
+          "p10_15min_usage_kwh": "28.26",
+          "p90_15min_usage_kwh": "88.78",
+          "supported": false,
+          "every_historical_timestamp_before_hour": true,
+          "every_historical_timestamp_in_window": true
+        }
+      },
+      "database_comparison_passed": true
+    },
+    {
+      "hour_start_local": "2018-12-31T00:00:00",
+      "eligible": true,
+      "exclusion_reason": null,
+      "current_observation_count": 4,
+      "historical_window_start_local": "2018-12-03T00:00:00",
+      "historical_window_end_exclusive_local": "2018-12-31T00:00:00",
+      "expected_usage_kwh": "16.12",
+      "components": {
+        "Light_Load": {
+          "current_interval_count": 4,
+          "historical_sample_count": 80,
+          "historical_first_timestamp_local": "2018-12-03T00:00:00",
+          "historical_last_timestamp_local": "2018-12-28T00:45:00",
+          "median_15min_usage_kwh": "4.03",
+          "p10_15min_usage_kwh": "3.35",
+          "p90_15min_usage_kwh": "4.82",
+          "supported": true,
+          "every_historical_timestamp_before_hour": true,
+          "every_historical_timestamp_in_window": true
+        }
+      },
+      "database_comparison_passed": true
+    },
+    {
+      "hour_start_local": "2018-12-31T23:00:00",
+      "eligible": true,
+      "exclusion_reason": null,
+      "current_observation_count": 4,
+      "historical_window_start_local": "2018-12-03T23:00:00",
+      "historical_window_end_exclusive_local": "2018-12-31T23:00:00",
+      "expected_usage_kwh": "16.12",
+      "components": {
+        "Light_Load": {
+          "current_interval_count": 4,
+          "historical_sample_count": 61,
+          "historical_first_timestamp_local": "2018-12-03T23:15:00",
+          "historical_last_timestamp_local": "2018-12-28T23:45:00",
+          "median_15min_usage_kwh": "4.03",
+          "p10_15min_usage_kwh": "3.78",
+          "p90_15min_usage_kwh": "4.86",
+          "supported": true,
+          "every_historical_timestamp_before_hour": true,
+          "every_historical_timestamp_in_window": true
+        }
+      },
+      "database_comparison_passed": true
+    },
+    {
+      "hour_start_local": "2018-03-01T00:00:00",
+      "eligible": true,
+      "exclusion_reason": null,
+      "current_observation_count": 4,
+      "historical_window_start_local": "2018-02-01T00:00:00",
+      "historical_window_end_exclusive_local": "2018-03-01T00:00:00",
+      "expected_usage_kwh": "157.52",
+      "components": {
+        "Light_Load": {
+          "current_interval_count": 4,
+          "historical_sample_count": 80,
+          "historical_first_timestamp_local": "2018-02-01T00:00:00",
+          "historical_last_timestamp_local": "2018-02-28T00:45:00",
+          "median_15min_usage_kwh": "39.38",
+          "p10_15min_usage_kwh": "3.35",
+          "p90_15min_usage_kwh": "86.94",
+          "supported": true,
+          "every_historical_timestamp_before_hour": true,
+          "every_historical_timestamp_in_window": true
+        }
+      },
+      "database_comparison_passed": true
+    },
+    {
+      "hour_start_local": "2018-03-03T00:00:00",
+      "eligible": true,
+      "exclusion_reason": null,
+      "current_observation_count": 4,
+      "historical_window_start_local": "2018-02-03T00:00:00",
+      "historical_window_end_exclusive_local": "2018-03-03T00:00:00",
+      "expected_usage_kwh": "135.52",
+      "components": {
+        "Light_Load": {
+          "current_interval_count": 4,
+          "historical_sample_count": 32,
+          "historical_first_timestamp_local": "2018-02-03T00:00:00",
+          "historical_last_timestamp_local": "2018-02-25T00:45:00",
+          "median_15min_usage_kwh": "33.88",
+          "p10_15min_usage_kwh": "3.13",
+          "p90_15min_usage_kwh": "82.3",
+          "supported": true,
+          "every_historical_timestamp_before_hour": true,
+          "every_historical_timestamp_in_window": true
+        }
+      },
+      "database_comparison_passed": true
+    },
+    {
+      "hour_start_local": "2018-03-01T09:00:00",
+      "eligible": true,
+      "exclusion_reason": null,
+      "current_observation_count": 4,
+      "historical_window_start_local": "2018-02-01T09:00:00",
+      "historical_window_end_exclusive_local": "2018-03-01T09:00:00",
+      "expected_usage_kwh": "294.38",
+      "components": {
+        "Light_Load": {
+          "current_interval_count": 1,
+          "historical_sample_count": 29,
+          "historical_first_timestamp_local": "2018-02-01T09:00:00",
+          "historical_last_timestamp_local": "2018-02-28T09:00:00",
+          "median_15min_usage_kwh": "55.58",
+          "p10_15min_usage_kwh": "3.38",
+          "p90_15min_usage_kwh": "128.99",
+          "supported": true,
+          "every_historical_timestamp_before_hour": true,
+          "every_historical_timestamp_in_window": true
+        },
+        "Medium_Load": {
+          "current_interval_count": 3,
+          "historical_sample_count": 51,
+          "historical_first_timestamp_local": "2018-02-01T09:15:00",
+          "historical_last_timestamp_local": "2018-02-28T09:45:00",
+          "median_15min_usage_kwh": "79.6",
+          "p10_15min_usage_kwh": "60.08",
+          "p90_15min_usage_kwh": "121.46",
+          "supported": true,
+          "every_historical_timestamp_before_hour": true,
+          "every_historical_timestamp_in_window": true
+        }
+      },
+      "database_comparison_passed": true
+    }
+  ],
+  "all_sampled_history_strictly_before_hour": true,
+  "global_component_history_window_violations": 0,
+  "reapplication_snapshots_equal": true,
+  "raw_rows_after_reapplication": 35040,
+  "raw_usage_kwh_after_reapplication": "959636.71",
+  "ingestion_runs_after_reapplication": 4,
+  "explain_analyze": {
+    "eligibility_status_full": {
+      "execution_ms": 187.303,
+      "shared_hit_blocks": 37734,
+      "nodes": [
+        {
+          "node_type": "Nested Loop",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Hash Join",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Seq Scan",
+          "relation": "steel_energy_readings",
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Hash",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Nested Loop",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Sort",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Seq Scan",
+          "relation": "steel_energy_readings",
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 10673
+        },
+        {
+          "node_type": "Index Only Scan",
+          "relation": "steel_energy_readings",
+          "index": "readings_baseline_context_time_idx",
+          "loops": 10673
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "CTE Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "CTE Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        }
+      ]
+    },
+    "eligibility_week_sample": {
+      "execution_ms": 182.171,
+      "shared_hit_blocks": 37734,
+      "nodes": [
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Hash Join",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Nested Loop",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Sort",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Seq Scan",
+          "relation": "steel_energy_readings",
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 10673
+        },
+        {
+          "node_type": "Index Only Scan",
+          "relation": "steel_energy_readings",
+          "index": "readings_baseline_context_time_idx",
+          "loops": 10673
+        },
+        {
+          "node_type": "Hash",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Sort",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Seq Scan",
+          "relation": "steel_energy_readings",
+          "index": null,
+          "loops": 1
+        }
+      ]
+    }
+  },
+  "decimal_tolerance": "0.000001",
+  "audit_status": "passed",
+  "problems": []
+}

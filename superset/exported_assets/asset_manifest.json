@@ -1,0 +1,392 @@
+{
+  "source": "EnergyOps verified analytics views",
+  "superset_version": "3.0.0",
+  "database_name": "EnergyOps verified analytics",
+  "datasets": [
+    {
+      "schema": "analytics",
+      "view": "energy_hourly",
+      "time_column": "hour_start_local",
+      "description": "One observed facility-local hour; additive kWh and kVarh. Power factor is a descriptive mean.",
+      "metrics": [
+        [
+          "usage_kwh",
+          "Total usage (kWh)",
+          "SUM(total_usage_kwh)",
+          ",.2f"
+        ],
+        [
+          "intervals",
+          "Observed intervals",
+          "SUM(observed_interval_count)",
+          ",.0f"
+        ],
+        [
+          "hours",
+          "Observed hours",
+          "COUNT(*)",
+          ",.0f"
+        ],
+        [
+          "coverage_pct",
+          "Interval coverage (%)",
+          "100.0 * SUM(observed_interval_count) / NULLIF(SUM(expected_interval_count), 0)",
+          ",.2f"
+        ]
+      ]
+    },
+    {
+      "schema": "analytics",
+      "view": "energy_daily",
+      "time_column": "reading_date",
+      "description": "One observed facility-local day; 96 expected intervals. Additive kWh and kVarh.",
+      "metrics": [
+        [
+          "usage_kwh",
+          "Daily usage (kWh)",
+          "SUM(total_usage_kwh)",
+          ",.2f"
+        ]
+      ]
+    },
+    {
+      "schema": "analytics",
+      "view": "energy_daily_by_load_type",
+      "time_column": "reading_date",
+      "description": "One observed day and source load type; load classes may coexist in a day.",
+      "metrics": [
+        [
+          "usage_kwh",
+          "Usage by load type (kWh)",
+          "SUM(total_usage_kwh)",
+          ",.2f"
+        ]
+      ]
+    },
+    {
+      "schema": "analytics",
+      "view": "energy_hourly_by_load_type",
+      "time_column": "hour_start_local",
+      "description": "One observed hour and source load type; descriptive mean power factor by class.",
+      "metrics": [
+        [
+          "usage_kwh",
+          "Usage by load type (kWh)",
+          "SUM(total_usage_kwh)",
+          ",.2f"
+        ],
+        [
+          "mean_pf_pct",
+          "Descriptive mean lagging PF (%)",
+          "AVG(mean_lagging_power_factor_pct)",
+          ",.2f"
+        ]
+      ]
+    },
+    {
+      "schema": "analytics",
+      "view": "energy_hour_of_day_profile",
+      "time_column": null,
+      "description": "48 hour-of-day by weekday/weekend groups; historical full-year profile, not date-filterable.",
+      "metrics": [
+        [
+          "mean_hour_kwh",
+          "Mean observed hour (kWh)",
+          "AVG(mean_observed_hour_usage_kwh)",
+          ",.2f"
+        ]
+      ]
+    },
+    {
+      "schema": "analytics",
+      "view": "energy_load_type_summary",
+      "time_column": null,
+      "description": "Three historical source load types; full-year summary, not date-filterable.",
+      "metrics": [
+        [
+          "usage_kwh",
+          "Usage by load type (kWh)",
+          "SUM(total_usage_kwh)",
+          ",.2f"
+        ]
+      ]
+    },
+    {
+      "schema": "analytics",
+      "view": "energy_hourly_baseline_eligibility",
+      "time_column": "hour_start_local",
+      "description": "One observed hour; excluded hours have NULL expected kWh.",
+      "metrics": [
+        [
+          "eligible_hours",
+          "Eligible hours",
+          "SUM(CASE WHEN eligible THEN 1 ELSE 0 END)",
+          ",.0f"
+        ],
+        [
+          "eligibility_pct",
+          "Eligibility (%)",
+          "100.0 * SUM(CASE WHEN eligible THEN 1 ELSE 0 END) / NULLIF(COUNT(*), 0)",
+          ",.2f"
+        ],
+        [
+          "excluded_hours",
+          "Excluded hours",
+          "SUM(CASE WHEN NOT eligible THEN 1 ELSE 0 END)",
+          ",.0f"
+        ]
+      ]
+    },
+    {
+      "schema": "analytics",
+      "view": "energy_rule_evaluation",
+      "time_column": "hour_start_local",
+      "description": "One observed hour; eligible and excluded remain distinct. Rule flags are hourly conditions.",
+      "metrics": [
+        [
+          "observed_kwh",
+          "Observed usage (kWh)",
+          "SUM(observed_usage_kwh)",
+          ",.2f"
+        ],
+        [
+          "expected_kwh",
+          "Expected usage (kWh, eligible only)",
+          "SUM(expected_usage_kwh)",
+          ",.2f"
+        ],
+        [
+          "consumption_positive",
+          "Consumption-positive hours",
+          "SUM(CASE WHEN consumption_deviation_candidate THEN 1 ELSE 0 END)",
+          ",.0f"
+        ],
+        [
+          "pf_positive",
+          "Power-factor-positive hours",
+          "SUM(CASE WHEN lagging_power_factor_review_candidate THEN 1 ELSE 0 END)",
+          ",.0f"
+        ],
+        [
+          "combined",
+          "Combined-priority hours",
+          "SUM(CASE WHEN combined_priority THEN 1 ELSE 0 END)",
+          ",.0f"
+        ],
+        [
+          "mean_pf_pct",
+          "Descriptive mean hourly lagging PF (%)",
+          "AVG(mean_lagging_power_factor_pct)",
+          ",.2f"
+        ]
+      ]
+    },
+    {
+      "schema": "analytics",
+      "view": "energy_candidate_hours",
+      "time_column": "hour_start_local",
+      "description": "One distinct eligible condition-positive hour, including singletons.",
+      "metrics": [
+        [
+          "distinct_candidate_hours",
+          "Distinct candidate hours",
+          "COUNT(*)",
+          ",.0f"
+        ]
+      ]
+    },
+    {
+      "schema": "analytics",
+      "view": "energy_candidate_incidents",
+      "time_column": "start_hour_local",
+      "description": "One sustained rule-specific island; an hour can participate in both rule streams.",
+      "metrics": [
+        [
+          "incidents",
+          "Sustained candidate incidents",
+          "COUNT(*)",
+          ",.0f"
+        ]
+      ]
+    },
+    {
+      "schema": "analytics",
+      "view": "energy_rule_summary",
+      "time_column": null,
+      "description": "Two fixed rule rows for full-year totals; not date-filterable and not an hourly grain.",
+      "metrics": []
+    }
+  ],
+  "charts": [
+    {
+      "title": "Total historical energy \u00b7 kWh",
+      "dataset": "energy_hourly",
+      "viz_type": "big_number_total"
+    },
+    {
+      "title": "Observed 15-minute intervals",
+      "dataset": "energy_hourly",
+      "viz_type": "big_number_total"
+    },
+    {
+      "title": "Observed facility-local hours",
+      "dataset": "energy_hourly",
+      "viz_type": "big_number_total"
+    },
+    {
+      "title": "Observed interval coverage \u00b7 %",
+      "dataset": "energy_hourly",
+      "viz_type": "big_number_total"
+    },
+    {
+      "title": "Daily energy trend \u00b7 kWh",
+      "dataset": "energy_daily",
+      "viz_type": "echarts_timeseries_line"
+    },
+    {
+      "title": "Energy by source load type \u00b7 kWh",
+      "dataset": "energy_daily_by_load_type",
+      "viz_type": "echarts_timeseries_bar"
+    },
+    {
+      "title": "Hour-of-day \u00b7 weekday and weekend",
+      "dataset": "energy_hour_of_day_profile",
+      "viz_type": "echarts_timeseries_bar"
+    },
+    {
+      "title": "Daily interval coverage \u00b7 %",
+      "dataset": "energy_daily",
+      "viz_type": "echarts_timeseries_line"
+    },
+    {
+      "title": "Rule eligibility \u00b7 %",
+      "dataset": "energy_hourly_baseline_eligibility",
+      "viz_type": "big_number_total"
+    },
+    {
+      "title": "Eligible hours",
+      "dataset": "energy_hourly_baseline_eligibility",
+      "viz_type": "big_number_total"
+    },
+    {
+      "title": "Excluded hours",
+      "dataset": "energy_hourly_baseline_eligibility",
+      "viz_type": "big_number_total"
+    },
+    {
+      "title": "Consumption-positive hours",
+      "dataset": "energy_rule_evaluation",
+      "viz_type": "big_number_total"
+    },
+    {
+      "title": "Distinct candidate hours",
+      "dataset": "energy_candidate_hours",
+      "viz_type": "big_number_total"
+    },
+    {
+      "title": "Sustained consumption incidents",
+      "dataset": "energy_candidate_incidents",
+      "viz_type": "big_number_total"
+    },
+    {
+      "title": "Exclusion reasons \u00b7 observed hours",
+      "dataset": "energy_hourly_baseline_eligibility",
+      "viz_type": "echarts_timeseries_bar"
+    },
+    {
+      "title": "Eligibility and hourly baseline detail",
+      "dataset": "energy_hourly_baseline_eligibility",
+      "viz_type": "table"
+    },
+    {
+      "title": "Observed and expected \u00b7 eligible kWh",
+      "dataset": "energy_rule_evaluation",
+      "viz_type": "echarts_timeseries_line"
+    },
+    {
+      "title": "Deviation candidate detail",
+      "dataset": "energy_candidate_hours",
+      "viz_type": "table"
+    },
+    {
+      "title": "Sustained incident timeline",
+      "dataset": "energy_candidate_incidents",
+      "viz_type": "echarts_timeseries_bar"
+    },
+    {
+      "title": "Sustained investigation register",
+      "dataset": "energy_candidate_incidents",
+      "viz_type": "table"
+    },
+    {
+      "title": "Power-factor-positive hours",
+      "dataset": "energy_rule_evaluation",
+      "viz_type": "big_number_total"
+    },
+    {
+      "title": "Sustained power-factor incidents",
+      "dataset": "energy_candidate_incidents",
+      "viz_type": "big_number_total"
+    },
+    {
+      "title": "Combined-priority hours",
+      "dataset": "energy_rule_evaluation",
+      "viz_type": "big_number_total"
+    },
+    {
+      "title": "Hourly lagging power-factor trend \u00b7 %",
+      "dataset": "energy_hourly",
+      "viz_type": "echarts_timeseries_line"
+    },
+    {
+      "title": "Usage context for power-factor review \u00b7 kWh",
+      "dataset": "energy_rule_evaluation",
+      "viz_type": "echarts_timeseries_line"
+    },
+    {
+      "title": "Lagging reactive energy \u00b7 kVarh",
+      "dataset": "energy_hourly",
+      "viz_type": "echarts_timeseries_line"
+    },
+    {
+      "title": "Descriptive PF by source load type \u00b7 %",
+      "dataset": "energy_hourly_by_load_type",
+      "viz_type": "echarts_timeseries_bar"
+    },
+    {
+      "title": "Power-factor investigation register",
+      "dataset": "energy_candidate_incidents",
+      "viz_type": "table"
+    }
+  ],
+  "dashboards": {
+    "Energy Operations Overview": {
+      "id": 1,
+      "url": "http://127.0.0.1:8090/superset/dashboard/1/",
+      "charts": 8,
+      "filters": [
+        "2018 date range",
+        "Load type"
+      ]
+    },
+    "Deviation & Incident Investigation": {
+      "id": 2,
+      "url": "http://127.0.0.1:8090/superset/dashboard/2/",
+      "charts": 12,
+      "filters": [
+        "2018 date range",
+        "Rule type"
+      ]
+    },
+    "Power-Factor Review": {
+      "id": 3,
+      "url": "http://127.0.0.1:8090/superset/dashboard/3/",
+      "charts": 8,
+      "filters": [
+        "2018 date range",
+        "Load type"
+      ]
+    }
+  },
+  "default_time_range": "2018-01-01 : 2019-01-01"
+}

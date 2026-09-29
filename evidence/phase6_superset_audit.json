@@ -1,0 +1,257 @@
+{
+  "generated_at_utc": "2026-09-29T14:57:09.991373+00:00",
+  "status": "passed",
+  "local_url": "http://127.0.0.1:8090",
+  "superset_version": "3.0.0",
+  "dataset_count": 11,
+  "chart_count": 28,
+  "dashboard_count": 3,
+  "dashboards": [
+    {
+      "title": "Deviation & Incident Investigation",
+      "id": 2,
+      "associated_charts": 12,
+      "filters": [
+        "2018 date range",
+        "Rule type"
+      ]
+    },
+    {
+      "title": "Power-Factor Review",
+      "id": 3,
+      "associated_charts": 8,
+      "filters": [
+        "2018 date range",
+        "Load type"
+      ]
+    },
+    {
+      "title": "Energy Operations Overview",
+      "id": 1,
+      "associated_charts": 8,
+      "filters": [
+        "2018 date range",
+        "Load type"
+      ]
+    }
+  ],
+  "chart_queries": [
+    {
+      "title": "Combined-priority hours",
+      "row_count": 1,
+      "status": "success"
+    },
+    {
+      "title": "Consumption-positive hours",
+      "row_count": 1,
+      "status": "success"
+    },
+    {
+      "title": "Daily energy trend \u00b7 kWh",
+      "row_count": 365,
+      "status": "success"
+    },
+    {
+      "title": "Daily interval coverage \u00b7 %",
+      "row_count": 365,
+      "status": "success"
+    },
+    {
+      "title": "Descriptive PF by source load type \u00b7 %",
+      "row_count": 3,
+      "status": "success"
+    },
+    {
+      "title": "Deviation candidate detail",
+      "row_count": 50,
+      "status": "success"
+    },
+    {
+      "title": "Distinct candidate hours",
+      "row_count": 1,
+      "status": "success"
+    },
+    {
+      "title": "Eligibility and hourly baseline detail",
+      "row_count": 100,
+      "status": "success"
+    },
+    {
+      "title": "Eligible hours",
+      "row_count": 1,
+      "status": "success"
+    },
+    {
+      "title": "Energy by source load type \u00b7 kWh",
+      "row_count": 3,
+      "status": "success"
+    },
+    {
+      "title": "Excluded hours",
+      "row_count": 1,
+      "status": "success"
+    },
+    {
+      "title": "Exclusion reasons \u00b7 observed hours",
+      "row_count": 1,
+      "status": "success"
+    },
+    {
+      "title": "Hour-of-day \u00b7 weekday and weekend",
+      "row_count": 48,
+      "status": "success"
+    },
+    {
+      "title": "Hourly lagging power-factor trend \u00b7 %",
+      "row_count": 365,
+      "status": "success"
+    },
+    {
+      "title": "Lagging reactive energy \u00b7 kVarh",
+      "row_count": 12,
+      "status": "success"
+    },
+    {
+      "title": "Observed 15-minute intervals",
+      "row_count": 1,
+      "status": "success"
+    },
+    {
+      "title": "Observed and expected \u00b7 eligible kWh",
+      "row_count": 12,
+      "status": "success"
+    },
+    {
+      "title": "Observed facility-local hours",
+      "row_count": 1,
+      "status": "success"
+    },
+    {
+      "title": "Observed interval coverage \u00b7 %",
+      "row_count": 1,
+      "status": "success"
+    },
+    {
+      "title": "Power-factor investigation register",
+      "row_count": 5,
+      "status": "success"
+    },
+    {
+      "title": "Power-factor-positive hours",
+      "row_count": 1,
+      "status": "success"
+    },
+    {
+      "title": "Rule eligibility \u00b7 %",
+      "row_count": 1,
+      "status": "success"
+    },
+    {
+      "title": "Sustained consumption incidents",
+      "row_count": 1,
+      "status": "success"
+    },
+    {
+      "title": "Sustained incident timeline",
+      "row_count": 12,
+      "status": "success"
+    },
+    {
+      "title": "Sustained investigation register",
+      "row_count": 100,
+      "status": "success"
+    },
+    {
+      "title": "Sustained power-factor incidents",
+      "row_count": 1,
+      "status": "success"
+    },
+    {
+      "title": "Total historical energy \u00b7 kWh",
+      "row_count": 1,
+      "status": "success"
+    },
+    {
+      "title": "Usage context for power-factor review \u00b7 kWh",
+      "row_count": 12,
+      "status": "success"
+    }
+  ],
+  "kpi_values": {
+    "Combined-priority hours": "25",
+    "Sustained power-factor incidents": "5",
+    "Power-factor-positive hours": "105",
+    "Sustained consumption incidents": "238",
+    "Distinct candidate hours": "1343",
+    "Consumption-positive hours": "1263",
+    "Excluded hours": "998",
+    "Eligible hours": "7762",
+    "Rule eligibility \u00b7 %": "88.60730593607306",
+    "Observed interval coverage \u00b7 %": "100.0",
+    "Observed facility-local hours": "8760",
+    "Observed 15-minute intervals": "35040",
+    "Total historical energy \u00b7 kWh": "959636.71"
+  },
+  "june_filter_queries": [
+    {
+      "title": "Daily energy trend \u00b7 kWh",
+      "month": "2018-06",
+      "row_count": 30
+    },
+    {
+      "title": "Observed and expected \u00b7 eligible kWh",
+      "month": "2018-06",
+      "row_count": 1
+    },
+    {
+      "title": "Hourly lagging power-factor trend \u00b7 %",
+      "month": "2018-06",
+      "row_count": 30
+    }
+  ],
+  "june_kpis": {
+    "Total historical energy \u00b7 kWh": "65404.64",
+    "Observed 15-minute intervals": "2880"
+  },
+  "select_filter_scopes": {
+    "Energy Operations Overview": [
+      "Energy by source load type \u00b7 kWh"
+    ],
+    "Deviation & Incident Investigation": [
+      "Sustained incident timeline",
+      "Sustained investigation register"
+    ],
+    "Power-Factor Review": [
+      "Descriptive PF by source load type \u00b7 %"
+    ]
+  },
+  "read_only_role": {
+    "analytics_hourly_rows_read": 8760,
+    "denied_operations": {
+      "raw_select": true,
+      "raw_insert": true,
+      "analytics_write": true
+    }
+  },
+  "raw_rows": 35040,
+  "raw_usage_kwh": "959636.71",
+  "ingestion_runs": 4,
+  "eligibility": [
+    7762,
+    998
+  ],
+  "rule_summary": [
+    [
+      "consumption_deviation",
+      1263,
+      238
+    ],
+    [
+      "lagging_power_factor_review",
+      105,
+      5
+    ]
+  ],
+  "candidate_hours": 1343,
+  "combined_priority_hours": 25
+}

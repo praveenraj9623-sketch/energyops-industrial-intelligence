@@ -1,0 +1,137 @@
+{
+  "snapshot_version": "energyops_public_snapshot_v1",
+  "generated_at_utc": "2026-09-29T15:03:16.849189+00:00",
+  "period_start_local": "2018-01-01 00:00:00",
+  "period_end_exclusive_local": "2019-01-01 00:00:00",
+  "timestamp_timezone": "unspecified facility-local",
+  "source_csv_sha256": "9b1cee6f9cb9cd9df2b95814ca90a9a2ff15b7f5f1fba0fae3c643e82072eacc",
+  "source_readings": 35040,
+  "files": {
+    "hourly": {
+      "file": "hourly.csv.gz",
+      "rows": 8760,
+      "bytes": 101373,
+      "sha256": "21e1b70f543cce7f585a0cf231570ff06b85377276158870fd962db1344f447e",
+      "columns": [
+        "hour_start_local",
+        "observed_interval_count",
+        "expected_interval_count",
+        "total_usage_kwh",
+        "total_lagging_reactive_power_kvarh",
+        "mean_lagging_power_factor_pct",
+        "light_load_interval_count",
+        "medium_load_interval_count",
+        "maximum_load_interval_count"
+      ],
+      "source_view": "analytics.energy_hourly"
+    },
+    "daily": {
+      "file": "daily.csv.gz",
+      "rows": 365,
+      "bytes": 4041,
+      "sha256": "646d0d2d03f61a7c99ed7821a3f2652b609acf2f33e41d08d67b48c8a59f6d09",
+      "columns": [
+        "reading_date",
+        "observed_interval_count",
+        "expected_interval_count",
+        "total_usage_kwh",
+        "total_lagging_reactive_power_kvarh"
+      ],
+      "source_view": "analytics.energy_daily"
+    },
+    "daily_by_load_type": {
+      "file": "daily_by_load_type.csv.gz",
+      "rows": 971,
+      "bytes": 14797,
+      "sha256": "75cf6e51225490d5cbf2e98d6e36cfb6b4b254fbb90825a1f36b24c6b9075de9",
+      "columns": [
+        "reading_date",
+        "load_type",
+        "observed_interval_count",
+        "total_usage_kwh",
+        "total_lagging_reactive_power_kvarh",
+        "mean_lagging_power_factor_pct"
+      ],
+      "source_view": "analytics.energy_daily_by_load_type"
+    },
+    "eligibility": {
+      "file": "eligibility.csv.gz",
+      "rows": 8760,
+      "bytes": 204028,
+      "sha256": "21fa9f6e8c31464f6bffef19c09a4882b97973ed636a9a2e65fab3c1a3647359",
+      "columns": [
+        "hour_start_local",
+        "eligible",
+        "exclusion_reason",
+        "current_observation_count",
+        "expected_observation_count",
+        "observed_usage_kwh",
+        "expected_usage_kwh",
+        "excess_kwh",
+        "deviation_pct",
+        "historical_sample_count_min",
+        "mean_lagging_power_factor_pct",
+        "consumption_deviation_candidate",
+        "lagging_power_factor_review_candidate",
+        "combined_priority"
+      ],
+      "source_view": "analytics.energy_rule_evaluation"
+    },
+    "candidate_hours": {
+      "file": "candidate_hours.csv.gz",
+      "rows": 1343,
+      "bytes": 36936,
+      "sha256": "0598e047306180763195093cb49d4683b9206221fdcd41386455581cf542dfee",
+      "columns": [
+        "hour_start_local",
+        "observed_usage_kwh",
+        "expected_usage_kwh",
+        "excess_kwh",
+        "deviation_pct",
+        "mean_lagging_power_factor_pct",
+        "consumption_deviation_candidate",
+        "lagging_power_factor_review_candidate",
+        "combined_priority"
+      ],
+      "source_view": "analytics.energy_candidate_hours"
+    },
+    "incidents": {
+      "file": "incidents.csv.gz",
+      "rows": 243,
+      "bytes": 13172,
+      "sha256": "43edf020a64cb78c67f0983a1edf7ed94e0a3b22cd6f1d1512a028b926e7838c",
+      "columns": [
+        "incident_key",
+        "rule_type",
+        "start_hour_local",
+        "last_candidate_hour_local",
+        "observed_hour_count",
+        "peak_observed_usage_kwh",
+        "peak_positive_excess_kwh",
+        "peak_signed_deviation_pct",
+        "minimum_mean_lagging_power_factor_pct",
+        "status"
+      ],
+      "source_view": "analytics.energy_candidate_incidents"
+    }
+  },
+  "totals": {
+    "observed_hours": 8760,
+    "observed_intervals": 35040,
+    "usage_kwh": "959636.71",
+    "eligible_hours": 7762,
+    "excluded_hours": 998,
+    "consumption_positive_hours": 1263,
+    "pf_positive_hours": 105,
+    "combined_priority_hours": 25,
+    "distinct_candidate_hours": 1343,
+    "consumption_incidents": 238,
+    "pf_incidents": 5
+  },
+  "reconciled_evidence": [
+    "phase3_reconciliation",
+    "phase4_baseline_audit",
+    "phase5_rule_audit",
+    "phase6_superset_audit"
+  ]
+}

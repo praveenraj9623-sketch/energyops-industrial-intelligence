@@ -1,0 +1,1216 @@
+{
+  "generated_at_utc": "2026-09-29T14:56:59.890530+00:00",
+  "audit_status": "passed",
+  "problems": [],
+  "source_sha256": "9b1cee6f9cb9cd9df2b95814ca90a9a2ff15b7f5f1fba0fae3c643e82072eacc",
+  "rule_version": "phase5_candidate_rules_v1",
+  "thresholds": {
+    "minimum_excess_kwh": "10",
+    "minimum_deviation_pct": "30",
+    "lagging_pf_strictly_below_pct": "70",
+    "minimum_pf_usage_kwh": "20",
+    "minimum_consecutive_hours": 2
+  },
+  "observed_hours": 8760,
+  "eligible_hours": 7762,
+  "excluded_hours": 998,
+  "candidate_hours_any": 1343,
+  "combined_priority_hours": 25,
+  "rule_summary": [
+    {
+      "rule_type": "consumption_deviation",
+      "observed_hours": 8760,
+      "eligible_hours": 7762,
+      "excluded_hours": 998,
+      "positive_hours": 1263,
+      "sustained_incidents": 238,
+      "sustained_candidate_hours": 986
+    },
+    {
+      "rule_type": "lagging_power_factor_review",
+      "observed_hours": 8760,
+      "eligible_hours": 7762,
+      "excluded_hours": 998,
+      "positive_hours": 105,
+      "sustained_incidents": 5,
+      "sustained_candidate_hours": 12
+    }
+  ],
+  "sampled_hours": [
+    {
+      "hour_start_local": "2018-01-01T00:00:00",
+      "eligible": false,
+      "load_types": [
+        "Light_Load"
+      ],
+      "historical_window_start_local": "2017-12-04T00:00:00",
+      "historical_window_end_exclusive_local": "2018-01-01T00:00:00",
+      "historical_sample_count_total": 0,
+      "expected_usage_kwh": null,
+      "every_history_timestamp_before_hour": true,
+      "every_history_timestamp_in_window": true,
+      "consumption_candidate": false,
+      "power_factor_candidate": false,
+      "independent_baseline_match": true
+    },
+    {
+      "hour_start_local": "2018-01-03T00:00:00",
+      "eligible": false,
+      "load_types": [
+        "Light_Load"
+      ],
+      "historical_window_start_local": "2017-12-06T00:00:00",
+      "historical_window_end_exclusive_local": "2018-01-03T00:00:00",
+      "historical_sample_count_total": 8,
+      "expected_usage_kwh": null,
+      "every_history_timestamp_before_hour": true,
+      "every_history_timestamp_in_window": true,
+      "consumption_candidate": false,
+      "power_factor_candidate": false,
+      "independent_baseline_match": true
+    },
+    {
+      "hour_start_local": "2018-03-15T10:00:00",
+      "eligible": true,
+      "load_types": [
+        "Maximum_Load",
+        "Medium_Load"
+      ],
+      "historical_window_start_local": "2018-02-15T10:00:00",
+      "historical_window_end_exclusive_local": "2018-03-15T10:00:00",
+      "historical_sample_count_total": 72,
+      "expected_usage_kwh": "294.22",
+      "every_history_timestamp_before_hour": true,
+      "every_history_timestamp_in_window": true,
+      "consumption_candidate": true,
+      "power_factor_candidate": false,
+      "independent_baseline_match": true
+    },
+    {
+      "hour_start_local": "2018-03-17T10:00:00",
+      "eligible": false,
+      "load_types": [
+        "Maximum_Load",
+        "Medium_Load"
+      ],
+      "historical_window_start_local": "2018-02-17T10:00:00",
+      "historical_window_end_exclusive_local": "2018-03-17T10:00:00",
+      "historical_sample_count_total": 16,
+      "expected_usage_kwh": null,
+      "every_history_timestamp_before_hour": true,
+      "every_history_timestamp_in_window": true,
+      "consumption_candidate": false,
+      "power_factor_candidate": false,
+      "independent_baseline_match": true
+    },
+    {
+      "hour_start_local": "2018-12-31T00:00:00",
+      "eligible": true,
+      "load_types": [
+        "Light_Load"
+      ],
+      "historical_window_start_local": "2018-12-03T00:00:00",
+      "historical_window_end_exclusive_local": "2018-12-31T00:00:00",
+      "historical_sample_count_total": 80,
+      "expected_usage_kwh": "16.12",
+      "every_history_timestamp_before_hour": true,
+      "every_history_timestamp_in_window": true,
+      "consumption_candidate": false,
+      "power_factor_candidate": false,
+      "independent_baseline_match": true
+    },
+    {
+      "hour_start_local": "2018-12-31T23:00:00",
+      "eligible": true,
+      "load_types": [
+        "Light_Load"
+      ],
+      "historical_window_start_local": "2018-12-03T23:00:00",
+      "historical_window_end_exclusive_local": "2018-12-31T23:00:00",
+      "historical_sample_count_total": 61,
+      "expected_usage_kwh": "16.12",
+      "every_history_timestamp_before_hour": true,
+      "every_history_timestamp_in_window": true,
+      "consumption_candidate": false,
+      "power_factor_candidate": false,
+      "independent_baseline_match": true
+    },
+    {
+      "hour_start_local": "2018-01-04T08:00:00",
+      "eligible": true,
+      "load_types": [
+        "Light_Load"
+      ],
+      "historical_window_start_local": "2017-12-07T08:00:00",
+      "historical_window_end_exclusive_local": "2018-01-04T08:00:00",
+      "historical_sample_count_total": 12,
+      "expected_usage_kwh": "38.32",
+      "every_history_timestamp_before_hour": true,
+      "every_history_timestamp_in_window": true,
+      "consumption_candidate": true,
+      "power_factor_candidate": false,
+      "independent_baseline_match": true
+    },
+    {
+      "hour_start_local": "2018-01-05T18:00:00",
+      "eligible": true,
+      "load_types": [
+        "Maximum_Load"
+      ],
+      "historical_window_start_local": "2017-12-08T18:00:00",
+      "historical_window_end_exclusive_local": "2018-01-05T18:00:00",
+      "historical_sample_count_total": 12,
+      "expected_usage_kwh": "161.00",
+      "every_history_timestamp_before_hour": true,
+      "every_history_timestamp_in_window": true,
+      "consumption_candidate": true,
+      "power_factor_candidate": false,
+      "independent_baseline_match": true
+    },
+    {
+      "hour_start_local": "2018-01-05T19:00:00",
+      "eligible": true,
+      "load_types": [
+        "Maximum_Load"
+      ],
+      "historical_window_start_local": "2017-12-08T19:00:00",
+      "historical_window_end_exclusive_local": "2018-01-05T19:00:00",
+      "historical_sample_count_total": 12,
+      "expected_usage_kwh": "165.44",
+      "every_history_timestamp_before_hour": true,
+      "every_history_timestamp_in_window": true,
+      "consumption_candidate": true,
+      "power_factor_candidate": false,
+      "independent_baseline_match": true
+    },
+    {
+      "hour_start_local": "2018-01-16T07:00:00",
+      "eligible": true,
+      "load_types": [
+        "Light_Load"
+      ],
+      "historical_window_start_local": "2017-12-19T07:00:00",
+      "historical_window_end_exclusive_local": "2018-01-16T07:00:00",
+      "historical_sample_count_total": 44,
+      "expected_usage_kwh": "18.88",
+      "every_history_timestamp_before_hour": true,
+      "every_history_timestamp_in_window": true,
+      "consumption_candidate": false,
+      "power_factor_candidate": true,
+      "independent_baseline_match": true
+    },
+    {
+      "hour_start_local": "2018-02-08T02:00:00",
+      "eligible": true,
+      "load_types": [
+        "Light_Load"
+      ],
+      "historical_window_start_local": "2018-01-11T02:00:00",
+      "historical_window_end_exclusive_local": "2018-02-08T02:00:00",
+      "historical_sample_count_total": 80,
+      "expected_usage_kwh": "24.20",
+      "every_history_timestamp_before_hour": true,
+      "every_history_timestamp_in_window": true,
+      "consumption_candidate": false,
+      "power_factor_candidate": true,
+      "independent_baseline_match": true
+    },
+    {
+      "hour_start_local": "2018-02-08T04:00:00",
+      "eligible": true,
+      "load_types": [
+        "Light_Load"
+      ],
+      "historical_window_start_local": "2018-01-11T04:00:00",
+      "historical_window_end_exclusive_local": "2018-02-08T04:00:00",
+      "historical_sample_count_total": 80,
+      "expected_usage_kwh": "23.2",
+      "every_history_timestamp_before_hour": true,
+      "every_history_timestamp_in_window": true,
+      "consumption_candidate": false,
+      "power_factor_candidate": true,
+      "independent_baseline_match": true
+    },
+    {
+      "hour_start_local": "2018-01-04T00:00:00",
+      "eligible": true,
+      "load_types": [
+        "Light_Load"
+      ],
+      "historical_window_start_local": "2017-12-07T00:00:00",
+      "historical_window_end_exclusive_local": "2018-01-04T00:00:00",
+      "historical_sample_count_total": 12,
+      "expected_usage_kwh": "15.40",
+      "every_history_timestamp_before_hour": true,
+      "every_history_timestamp_in_window": true,
+      "consumption_candidate": false,
+      "power_factor_candidate": false,
+      "independent_baseline_match": true
+    },
+    {
+      "hour_start_local": "2018-01-18T23:00:00",
+      "eligible": true,
+      "load_types": [
+        "Light_Load",
+        "Maximum_Load"
+      ],
+      "historical_window_start_local": "2017-12-21T23:00:00",
+      "historical_window_end_exclusive_local": "2018-01-18T23:00:00",
+      "historical_sample_count_total": 52,
+      "expected_usage_kwh": "18.51",
+      "every_history_timestamp_before_hour": true,
+      "every_history_timestamp_in_window": true,
+      "consumption_candidate": true,
+      "power_factor_candidate": false,
+      "independent_baseline_match": true
+    },
+    {
+      "hour_start_local": "2018-01-19T00:00:00",
+      "eligible": true,
+      "load_types": [
+        "Light_Load"
+      ],
+      "historical_window_start_local": "2017-12-22T00:00:00",
+      "historical_window_end_exclusive_local": "2018-01-19T00:00:00",
+      "historical_sample_count_total": 56,
+      "expected_usage_kwh": "18.44",
+      "every_history_timestamp_before_hour": true,
+      "every_history_timestamp_in_window": true,
+      "consumption_candidate": true,
+      "power_factor_candidate": false,
+      "independent_baseline_match": true
+    },
+    {
+      "hour_start_local": "2018-01-05T11:00:00",
+      "eligible": true,
+      "load_types": [
+        "Maximum_Load"
+      ],
+      "historical_window_start_local": "2017-12-08T11:00:00",
+      "historical_window_end_exclusive_local": "2018-01-05T11:00:00",
+      "historical_sample_count_total": 12,
+      "expected_usage_kwh": "314.48",
+      "every_history_timestamp_before_hour": true,
+      "every_history_timestamp_in_window": true,
+      "consumption_candidate": true,
+      "power_factor_candidate": false,
+      "independent_baseline_match": true
+    },
+    {
+      "hour_start_local": "2018-01-05T12:00:00",
+      "eligible": false,
+      "load_types": [
+        "Maximum_Load",
+        "Medium_Load"
+      ],
+      "historical_window_start_local": "2017-12-08T12:00:00",
+      "historical_window_end_exclusive_local": "2018-01-05T12:00:00",
+      "historical_sample_count_total": 12,
+      "expected_usage_kwh": null,
+      "every_history_timestamp_before_hour": true,
+      "every_history_timestamp_in_window": true,
+      "consumption_candidate": false,
+      "power_factor_candidate": false,
+      "independent_baseline_match": true
+    },
+    {
+      "hour_start_local": "2018-01-05T13:00:00",
+      "eligible": true,
+      "load_types": [
+        "Medium_Load"
+      ],
+      "historical_window_start_local": "2017-12-08T13:00:00",
+      "historical_window_end_exclusive_local": "2018-01-05T13:00:00",
+      "historical_sample_count_total": 12,
+      "expected_usage_kwh": "223.36",
+      "every_history_timestamp_before_hour": true,
+      "every_history_timestamp_in_window": true,
+      "consumption_candidate": true,
+      "power_factor_candidate": false,
+      "independent_baseline_match": true
+    },
+    {
+      "hour_start_local": "2018-03-01T09:00:00",
+      "eligible": true,
+      "load_types": [
+        "Light_Load",
+        "Medium_Load"
+      ],
+      "historical_window_start_local": "2018-02-01T09:00:00",
+      "historical_window_end_exclusive_local": "2018-03-01T09:00:00",
+      "historical_sample_count_total": 80,
+      "expected_usage_kwh": "294.38",
+      "every_history_timestamp_before_hour": true,
+      "every_history_timestamp_in_window": true,
+      "consumption_candidate": false,
+      "power_factor_candidate": false,
+      "independent_baseline_match": true
+    }
+  ],
+  "all_sampled_history_strictly_earlier": true,
+  "source_case_hours": {
+    "eligible_nonbreaching": "2018-01-04T00:00:00",
+    "consecutive_across_day_boundary": [
+      "2018-01-18T23:00:00",
+      "2018-01-19T00:00:00"
+    ],
+    "candidate_gap_candidate": [
+      "2018-01-05T11:00:00",
+      "2018-01-05T12:00:00",
+      "2018-01-05T13:00:00"
+    ],
+    "mixed_load": "2018-03-01T09:00:00"
+  },
+  "rerun_snapshots_equal": true,
+  "raw_readings": 35040,
+  "raw_usage_kwh": "959636.71",
+  "ingestion_runs": 4,
+  "explain_analyze": {
+    "summary_full": {
+      "execution_ms": 1356.381,
+      "shared_hit_blocks": 116412,
+      "nodes": [
+        {
+          "node_type": "Nested Loop",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Hash Join",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Hash Join",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Seq Scan",
+          "relation": "steel_energy_readings",
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Hash",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Nested Loop",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Sort",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Seq Scan",
+          "relation": "steel_energy_readings",
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 10673
+        },
+        {
+          "node_type": "Index Only Scan",
+          "relation": "steel_energy_readings",
+          "index": "readings_baseline_context_time_idx",
+          "loops": 10673
+        },
+        {
+          "node_type": "Hash",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Seq Scan",
+          "relation": "steel_energy_readings",
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Merge Join",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Sort",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Values Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Sort",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Incremental Sort",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "WindowAgg",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "WindowAgg",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Sort",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Append",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Hash Join",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Seq Scan",
+          "relation": "steel_energy_readings",
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Hash",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Hash Join",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Seq Scan",
+          "relation": "steel_energy_readings",
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Hash",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Nested Loop",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Sort",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Seq Scan",
+          "relation": "steel_energy_readings",
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 10673
+        },
+        {
+          "node_type": "Index Only Scan",
+          "relation": "steel_energy_readings",
+          "index": "readings_baseline_context_time_idx",
+          "loops": 10673
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Hash Join",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Seq Scan",
+          "relation": "steel_energy_readings",
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Hash",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Hash Join",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Seq Scan",
+          "relation": "steel_energy_readings",
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Hash",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Nested Loop",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Sort",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Seq Scan",
+          "relation": "steel_energy_readings",
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 10673
+        },
+        {
+          "node_type": "Index Only Scan",
+          "relation": "steel_energy_readings",
+          "index": "readings_baseline_context_time_idx",
+          "loops": 10673
+        }
+      ]
+    },
+    "incidents_full": {
+      "execution_ms": 594.001,
+      "shared_hit_blocks": 77608,
+      "nodes": [
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Incremental Sort",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "WindowAgg",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "WindowAgg",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Sort",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Append",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Hash Join",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Seq Scan",
+          "relation": "steel_energy_readings",
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Hash",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Hash Join",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Seq Scan",
+          "relation": "steel_energy_readings",
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Hash",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Nested Loop",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Sort",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Seq Scan",
+          "relation": "steel_energy_readings",
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 10673
+        },
+        {
+          "node_type": "Index Only Scan",
+          "relation": "steel_energy_readings",
+          "index": "readings_baseline_context_time_idx",
+          "loops": 10673
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Hash Join",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Seq Scan",
+          "relation": "steel_energy_readings",
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Hash",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Hash Join",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Seq Scan",
+          "relation": "steel_energy_readings",
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Hash",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Nested Loop",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Sort",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Seq Scan",
+          "relation": "steel_energy_readings",
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 10673
+        },
+        {
+          "node_type": "Index Only Scan",
+          "relation": "steel_energy_readings",
+          "index": "readings_baseline_context_time_idx",
+          "loops": 10673
+        }
+      ]
+    },
+    "evaluation_week": {
+      "execution_ms": 187.044,
+      "shared_hit_blocks": 38804,
+      "nodes": [
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Hash Join",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Seq Scan",
+          "relation": "steel_energy_readings",
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Hash",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Hash Join",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Nested Loop",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Sort",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Seq Scan",
+          "relation": "steel_energy_readings",
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 10673
+        },
+        {
+          "node_type": "Index Only Scan",
+          "relation": "steel_energy_readings",
+          "index": "readings_baseline_context_time_idx",
+          "loops": 10673
+        },
+        {
+          "node_type": "Hash",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Subquery Scan",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Aggregate",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Sort",
+          "relation": null,
+          "index": null,
+          "loops": 1
+        },
+        {
+          "node_type": "Seq Scan",
+          "relation": "steel_energy_readings",
+          "index": null,
+          "loops": 1
+        }
+      ]
+    }
+  }
+}

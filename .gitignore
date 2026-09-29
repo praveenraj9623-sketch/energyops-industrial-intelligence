@@ -208,6 +208,8 @@ data/raw/*
 !data/raw/.gitkeep
 data/export/*
 !data/export/.gitkeep
+!data/export/*.csv.gz
+!data/export/manifest.json
 *.db
 *.sqlite
 *.sqlite3
