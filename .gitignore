@@ -218,6 +218,8 @@ data/export/*
 docker-data/
 docker-volumes/
 volumes/
+pgdata/
+postgres-data/
 
 # Ruff stuff:
 .ruff_cache/

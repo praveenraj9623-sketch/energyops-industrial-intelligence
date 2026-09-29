@@ -25,7 +25,7 @@
     "Load_Type"
   ],
   "canonical_columns": {
-    "date": "source_timestamp",
+    "date": "source_timestamp_local",
     "Usage_kWh": "usage_kwh",
     "Lagging_Current_Reactive.Power_kVarh": "lagging_reactive_power_kvarh",
     "Leading_Current_Reactive_Power_kVarh": "leading_reactive_power_kvarh",

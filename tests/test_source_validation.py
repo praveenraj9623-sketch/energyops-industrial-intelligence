@@ -21,7 +21,7 @@ def write_csv(tmp_path, rows):
 def test_exact_schema_and_mapping():
     validate_columns(COLUMN_MAP)
     assert COLUMN_MAP["CO2(tCO2)"] == "co2_value"
-    assert COLUMN_MAP["date"] == "source_timestamp"
+    assert COLUMN_MAP["date"] == "source_timestamp_local"
     with pytest.raises(ValueError, match="Missing"):
         validate_columns(list(COLUMN_MAP)[:-1])
     with pytest.raises(ValueError, match="order matches: False"):

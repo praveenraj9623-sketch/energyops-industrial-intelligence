@@ -1,0 +1,79 @@
+{
+  "generated_at_utc": "2026-09-29T11:07:06.546541+00:00",
+  "database_version": "16.15 (Debian 16.15-1.pgdg13+2)",
+  "csv_sha256": "9b1cee6f9cb9cd9df2b95814ca90a9a2ff15b7f5f1fba0fae3c643e82072eacc",
+  "source_rows": 35040,
+  "accepted_rows": 35040,
+  "rejected_rows": 0,
+  "inserted_rows": 35040,
+  "rejection_table_rows": 0,
+  "raw_database_rows": 35040,
+  "distinct_timestamps": 35040,
+  "duplicate_timestamp_count": 0,
+  "minimum_timestamp": "2018-01-01T00:00:00",
+  "maximum_timestamp": "2018-12-31T23:45:00",
+  "source_sums": {
+    "usage_kwh": "959636.71",
+    "lagging_reactive_power_kvarh": "456759.84",
+    "leading_reactive_power_kvarh": "135638.04"
+  },
+  "database_sums": {
+    "usage_kwh": "959636.71",
+    "lagging_reactive_power_kvarh": "456759.84",
+    "leading_reactive_power_kvarh": "135638.04"
+  },
+  "source_category_counts": {
+    "load_type": {
+      "Light_Load": 18072,
+      "Medium_Load": 9696,
+      "Maximum_Load": 7272
+    },
+    "week_status": {
+      "Weekday": 25056,
+      "Weekend": 9984
+    },
+    "day_of_week": {
+      "Monday": 5088,
+      "Tuesday": 4992,
+      "Wednesday": 4992,
+      "Thursday": 4992,
+      "Friday": 4992,
+      "Saturday": 4992,
+      "Sunday": 4992
+    }
+  },
+  "database_category_counts": {
+    "load_type": {
+      "Light_Load": 18072,
+      "Maximum_Load": 7272,
+      "Medium_Load": 9696
+    },
+    "week_status": {
+      "Weekday": 25056,
+      "Weekend": 9984
+    },
+    "day_of_week": {
+      "Friday": 4992,
+      "Monday": 5088,
+      "Saturday": 4992,
+      "Sunday": 4992,
+      "Thursday": 4992,
+      "Tuesday": 4992,
+      "Wednesday": 4992
+    }
+  },
+  "staging_rows": 35040,
+  "timestamp_consistency_mismatch_counts": {
+    "day_name": 0,
+    "week_status": 0,
+    "seconds_from_midnight": 0
+  },
+  "second_run_result": {
+    "status": "skipped_duplicate",
+    "inserted_rows": 0
+  },
+  "raw_rows_after_second_run": 35040,
+  "decimal_tolerance": "0.000001",
+  "reconciliation_status": "passed",
+  "problems": []
+}

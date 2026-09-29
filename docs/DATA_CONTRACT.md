@@ -4,7 +4,7 @@
 
 | Exact source name | Canonical destination | Type | Unit | Nullable | Accepted values and validation | Meaning and limitation |
 |---|---|---|---|---|---|---|
-| `date` | `source_timestamp` | timestamp, `%d/%m/%Y %H:%M` | local time, zone unspecified | No | Parseable; unique; 15-minute grid; calendar date within source coverage | Observation time. Do not assume UTC or a specific Korean timezone until confirmed. |
+| `date` | `source_timestamp_local` | `TIMESTAMP WITHOUT TIME ZONE`, `%d/%m/%Y %H:%M` | facility-local wall time, zone unspecified | No | Parseable; unique; 15-minute grid; calendar date within source coverage | Observation time. Do not convert to UTC; timezone status is `unspecified`. |
 | `Usage_kWh` | `usage_kwh` | decimal | kWh | No | Finite, >= 0 | Recorded interval electricity consumption; no production denominator or tariff. |
 | `Lagging_Current_Reactive.Power_kVarh` | `lagging_reactive_power_kvarh` | decimal | kVarh | No | Finite, >= 0 | Lagging reactive energy; measurement method unspecified. |
 | `Leading_Current_Reactive_Power_kVarh` | `leading_reactive_power_kvarh` | decimal | kVarh | No | Finite, >= 0 | Leading reactive energy; measurement method unspecified. |
@@ -16,6 +16,6 @@
 | `Day_of_week` | `day_of_week` | string | none | No | Monday through Sunday; agrees with date | Calendar day label. |
 | `Load_Type` | `load_type` | string | none | No | `Light_Load`, `Medium_Load`, `Maximum_Load` | Source load class; classification method and operational meaning are not documented. |
 
-The source uses `Weekday`/`Weekend` strings, despite the UCI description mentioning 0/1. The UCI page says “9 features” but its variables table and the CSV contain 11 columns; the downloaded CSV controls this implementation. See [source attribution](SOURCE_ATTRIBUTION.md) and [quality audit](DATA_QUALITY.md).
+The source uses `Weekday`/`Weekend` strings, despite the UCI description mentioning 0/1. The UCI page says “9 features” but its variables table and the CSV contain 11 columns; the downloaded CSV controls this implementation. Phase 2 stores parsed timestamps as facility-local values without UTC conversion. See [source attribution](SOURCE_ATTRIBUTION.md) and [quality audit](DATA_QUALITY.md).
 
 Future ingestion must preserve original values and source identity, reject or quarantine contract violations with a reason, and reconcile accepted + quarantined counts to the source row count. No conversion of `co2_value` is authorized by this contract.

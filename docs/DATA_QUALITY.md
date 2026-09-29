@@ -26,4 +26,6 @@ Category distribution: Light_Load 18,072; Medium_Load 9,696; Maximum_Load 7,272.
 - **Accepted with limitation:** There are no production or incident labels; a deviation is only an investigation candidate.
 - **Quarantined in a future phase:** None in this source copy. Future invalid rows must retain their original payload, source row reference and rejection reason; no silent correction or deletion.
 
-Phase 2 must reconcile source count = accepted count + quarantined count, compare checksums and schema to this intake, assert timestamp uniqueness and 15-minute continuity, re-run numeric/category checks, and review any new exceptions before publishing analytical results. The current clean profile is not evidence that future files will be clean.
+The Phase 2 loader reconciles source count = accepted count + quarantined count, compares the checksum with this intake, applies timestamp uniqueness and numeric/category checks, and requires review of new exceptions before publishing analytical results. The current clean profile is not evidence that future files will be clean.
+
+Phase 2 implements the typed raw constraints, row quarantine and reconciliation described in [INGESTION.md](INGESTION.md). The database result is recorded separately in `evidence/phase2_reconciliation.json` when the verification command runs; this Phase 1 audit remains the independent source baseline.
